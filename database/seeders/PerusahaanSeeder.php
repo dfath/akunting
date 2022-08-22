@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class PerusahaanSeeder extends Seeder
@@ -18,7 +19,7 @@ class PerusahaanSeeder extends Seeder
         if (($handle = fopen( __DIR__ . "/perusahaan.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 if($row) {
-                    \DB::table('perusahaan')->insert([
+                    DB::table('perusahaan')->insert([
                         'id' => intval($data[0]),
                         'nama' => $data[1],
                     ]);

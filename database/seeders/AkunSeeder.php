@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class AkunSeeder extends Seeder
@@ -18,7 +19,7 @@ class AkunSeeder extends Seeder
         if (($handle = fopen( __DIR__ . "/akun.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 if ($row)
-                \DB::table('akun')->insert([
+                DB::table('akun')->insert([
                     'id' => intval($data[0]),
                     'induk_id' => intval($data[1]),
                     'nama' => $data[2],

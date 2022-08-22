@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class KategoriSeeder extends Seeder
@@ -18,7 +19,7 @@ class KategoriSeeder extends Seeder
         if (($handle = fopen( __DIR__ . "/kategori.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 if ($row)
-                \DB::table('kategori')->insert([
+                DB::table('kategori')->insert([
                     'id' => intval($data[0]),
                     'nama' => $data[1],
                 ]);
