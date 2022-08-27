@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('rekonsiliasi')->default(0);
             $table->string('created_from', 100)->nullable();
             $table->unsignedInteger('created_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->index('perusahaan_id');

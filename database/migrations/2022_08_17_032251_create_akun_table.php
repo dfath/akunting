@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nama');
             $table->double('saldo_awal', 15, 4)->default('0.0000');
             $table->integer('induk_id')->default(0);
+            $table->softDeletes();
             $table->timestamps();
 
             $table->index('perusahaan_id');
