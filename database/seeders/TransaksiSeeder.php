@@ -15,7 +15,7 @@ class TransaksiSeeder extends Seeder
      */
     public function run()
     {
-        $filename = __DIR__ . "/transaksi-2.xlsx";
+        $filename = __DIR__ . "/transaksi.xlsx";
 
         Excel::import(new TransaksiImport, $filename);
     }
