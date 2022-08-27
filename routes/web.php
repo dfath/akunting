@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +14,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Redirect::route('login');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Transaksi/Transaksi');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
