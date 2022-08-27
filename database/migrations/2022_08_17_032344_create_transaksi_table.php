@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tipe'); // income, income-transfer, income-split, income-recurring, expense, expense-transfer, expense-split, expense-recurring
             $table->dateTime('waktu_bayar');
             $table->double('jumlah', 15, 4);
+            $table->text('deskripsi')->nullable();
             $table->boolean('rekonsiliasi')->default(0);
             $table->string('created_from', 100)->nullable();
             $table->unsignedInteger('created_by')->nullable();
